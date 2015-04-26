@@ -185,7 +185,11 @@ public class MainActivity extends ActionBarActivity implements GoogleMap.OnMarke
                 String path = android.os.Environment
                         .getExternalStorageDirectory()
                         + File.separator
-                        + "Phoenix" + File.separator + "default";
+                        + "Housing" + File.separator + "default";
+                File af = new File(path);
+                if(!af.exists()){
+                    af.mkdirs();
+                }
                 f.delete();
                 OutputStream outFile = null;
                 File file = new File(path, String.valueOf(System.currentTimeMillis()) + ".jpg");
